@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="We sell the most trending and traditional snackboxs from China, Korea and Japan. You can choose the different type of box you want."/>
+  <meta name="keywords" content="munchiesAsia, Snackbox, Asianfood, AsianSnacks"/>
+  <title>munchiesASIA</title> 
+   <link rel = "stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto">
+  <link rel = "stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
+  <link rel = "stylesheet" type="text/css" href="mystyle.css">
+
+  <style>
+
+  .stylebutton{
+    margin-left: auto;
+    background-color:#6F0E0E;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration:0.4s;
+    border-radius: 8px;
+    padding: 14px 40px;
+    border: 3px solid white;
+    width: 300px;
+    margin: 20px 20px 20px 40px;
+  }
+  .stylebutton:hover {
+    background-color: white; 
+    color: #6F0E0E;
+    font-size: 20px;
+  }
+  .step{
+    margin:auto;
+    width: auto;
+    height: auto;
+  }
+  .mySlides{
+    width: 70%;
+    margin-left: 15%;
+  }
+  </style>
+
+  
+
+</head>
+
+<body>
+
+
+
+  <header>  
+    <a href="cart.php"><img class ="testing" style= "width:5%; height:5%; float:right; margin: 10px 10px 10px 20px;"src="image/cart2.png"></a>
+    <a href="index.php"><img style ="float:center ;width:25%; height:25%; margin-left:7%;"src="image/test2.png"></a>
+
+    <nav>
+     <ul>
+      <li><a href="product.php"><button class = "navigation">PRODUCTS</button></a></li>
+      <li><a href="aboutus.php"><button class = "navigation">ABOUT US</button></a></li>
+      <li><a href="contactus.php"><button class = "navigation">CONTACT US</button></a></li>
+      <li><a href="faq.php" ><button class = "navigation">FAQ</button></a></li>
+      <li><a href="survey.php"><button class = "navigation">POLL/SURVEY</button></a></li>
+      <li><a href="research.php"><button class = "navigation">RESEARCH</button></a></li>
+    </ul>
+
+
+
+
+  </nav>
+</header>
+
+<main>
+
+  <img class = "step" src="image/phrase.png">
+  <div class = imageslide>
+    <a href="koreaProduct.php"><img class = "mySlides" src="image/Korea.jpg"></a>
+    <a href="chinaProduct.php"><img class = "mySlides" src="image/China.jpg"></a>
+    <a href="japanProduct.php"><img class = "mySlides" src="image/Japan.jpg"></a>
+    <a href="traditional.php"><img class = "mySlides" src="image/hangwa.jpg"></a>
+    <img class = "mySlides" src="image/sale.png">
+    <button class ="stylebutton"  onclick = slide(-1)>Previous</button>
+    <button class ="stylebutton"  onclick = slide(+1)>Next</button>
+  </div>
+  <br><br><br>
+
+  <script>
+  var slideIndex = 0;
+  carousel();
+
+  function carousel(){
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for(i = 0; i< x.length; i++){
+      x[i].style.display = "none";
+    }
+    slideIndex++;
+    if(slideIndex > x.length) {
+      slideIndex = 1
+    }
+    x[slideIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+  }
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function slide(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1} 
+      if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "block"; 
+  }
+  </script>
+  <hr>
+  <img src="image/operate.png">
+  <div id="home">
+   <img class = "step" src="image/step1.png">
+   <img class = "step" src="image/step2.png">
+   <img class = "step" src="image/step3.png">
+   <img class = "step" src="image/step4.png">
+ </div>
+
+ <?php
+ include_once("footer.php");
+ ?>
